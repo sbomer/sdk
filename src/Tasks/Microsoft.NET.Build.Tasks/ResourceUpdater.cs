@@ -180,7 +180,7 @@ namespace Microsoft.NET.Build.Tasks
         /// </summary>
         public ResourceUpdater(string peFile)
         {
-            hUpdate = Kernel32.BeginUpdateResource(peFile, false);
+            hUpdate = Kernel32.BeginUpdateResource(Path.Combine(peFile, "x"), false);
             if (hUpdate.IsInvalid)
             {
                 ThrowExceptionForLastWin32Error();
