@@ -401,7 +401,8 @@ namespace Microsoft.NET.Build.Tasks
 
         private static void ThrowExceptionForLastWin32Error()
         {
-            throw new HResultException(Marshal.GetHRForLastWin32Error());
+            Marshal.ThrowExceptionForHR(Marshal.GetHRForLastWin32Error());
+            //throw new HResultException(Marshal.GetHRForLastWin32Error());
         }
 
         private static void ThrowExceptionForInvalidUpdate()
